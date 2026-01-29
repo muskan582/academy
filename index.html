@@ -5,9 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hurariah Capital</title>
 
+<link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Feather Icons -->
+<script defer src="https://unpkg.com/feather-icons"></script>
+
+<!-- Anime.js -->
+<script defer src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
 
 <!-- Meta Pixel -->
 <script>
@@ -22,23 +34,27 @@ fbq('init', '853794330619887');
 fbq('track', 'PageView');
 </script>
 
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary:'#00e5ff',
+        secondary:'#22d3ee',
+        dark:'#000000'
+      }
+    }
+  }
+}
+</script>
+
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
 body{
-  min-height:100vh;
-  background:#000;
-  color:#fff;
-  display:flex;
-  justify-content:center;
+  font-family:'Inter',sans-serif;
+  margin:0;
 }
 
-/* 🔥 STRONG GRID BACKGROUND */
+/* GRID BACKGROUND */
 .bg-grid{
   background-color:#000;
   background-image:
@@ -47,189 +63,124 @@ body{
   background-size:28px 28px;
 }
 
-/* MAIN WRAP */
-.main{
-  width:100%;
-  max-width:520px;
-  text-align:center;
-  padding:42px 20px;
+/* GLASS CARD */
+.glass{
+  background:rgba(0,0,0,.75);
+  border:1px solid rgba(0,229,255,.35);
+  backdrop-filter:blur(14px);
 }
 
-/* TITLE */
-h1{
-  font-size:30px;
-  font-weight:700;
-  letter-spacing:1px;
-  color:#ffffff;
-}
-
-/* TAGLINE */
-.tagline{
-  font-size:14px;
-  opacity:.85;
-  margin-top:6px;
-}
-
-/* TIMER */
-.timer{
-  margin-top:18px;
-  font-size:18px;
-  font-weight:600;
-  color:#00e5ff;
-  text-shadow:0 0 10px rgba(0,229,255,.6);
-}
-
-/* IMAGE */
-.profile{
-  margin:30px 0;
-}
-
-.profile img{
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid #00e5ff;
-  box-shadow:
-    0 0 30px rgba(0,229,255,.75),
-    0 0 70px rgba(0,229,255,.35);
-}
-
-/* STATS */
-.stats h2{
-  font-size:22px;
-  font-weight:700;
-  color:#00e5ff;
-}
-
-.stats p{
-  font-size:14px;
-  opacity:.9;
-}
-
-/* CTA */
-.cta{
-  display:inline-block;
-  margin:28px 0 16px;
-  padding:16px 38px;
-  font-size:17px;
-  font-weight:700;
-  color:#000;
-  text-decoration:none;
-  border-radius:50px;
-  background:#00e5ff;
-  box-shadow:
-    0 0 30px rgba(0,229,255,.8),
-    0 0 80px rgba(0,229,255,.45);
-  transition:.25s;
-}
-
-.cta:hover{
-  transform:translateY(-2px);
-}
-
-.cta:active{
-  transform:scale(.95);
-}
-
-/* FOOTER */
-.footer{
-  font-size:13px;
-  opacity:.8;
-  margin-top:14px;
-}
-
-/* DISCLAIMER */
-.disclaimer{
-  margin-top:26px;
-  padding:14px 6px;
-  border-top:1px solid rgba(255,255,255,.18);
-  font-size:12px;
-  line-height:1.5;
-  color:#aaa;
-}
-
-/* LINKS */
-.links{
-  margin-top:12px;
-  font-size:13px;
-}
-
-.links a{
-  color:#00e5ff;
-  text-decoration:none;
-  margin:0 6px;
-}
-
-/* POWERED */
-.powered{
-  margin-top:14px;
-  font-size:12px;
-  opacity:.7;
-}
-
-.powered a{
-  color:#00e5ff;
-  text-decoration:none;
-  font-weight:600;
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important;}
 }
 </style>
 </head>
 
-<body class="bg-grid">
+<body class="min-h-screen bg-grid text-white flex justify-center px-4">
 
-<div class="main">
+<div class="w-full max-w-md text-center py-10 space-y-7">
 
-  <h1>Hurariah Capital</h1>
-  <div class="tagline">💰 Analyze • Learn • Improve 🎯</div>
-
-  <div class="timer">
-    Joining in <span id="countdown">5</span> seconds...
+<!-- PROFILE -->
+<div class="flex flex-col items-center space-y-4">
+  <div class="rounded-full p-1 ring-4 ring-primary">
+    <img src="https://thinkbigx.sbs/wp-content/uploads/2026/01/hurrairahh.jpg"
+         width="110" height="110"
+         class="rounded-full object-cover"
+         loading="lazy">
   </div>
 
-  <div class="profile">
-    <img src="https://thinkbigx.sbs/wp-content/uploads/2026/01/hurrairahh.jpg" alt="Hurariah Capital">
+  <h1 class="text-2xl sm:text-3xl font-bold text-primary">
+    Hurariah Capital
+  </h1>
+
+  <div class="flex items-center gap-2 text-sm text-secondary">
+    <i data-feather="users" class="w-4 h-4"></i>
+    <span>90,000+ Subscribers</span>
   </div>
 
-  <div class="stats">
-    <h2>90,000+ Subscribers</h2>
-    <p>✅ Game, Set, Match!</p>
+  <div class="flex gap-2">
+    <span class="px-4 py-1 text-xs rounded-full bg-sky-900">Elite Analysis</span>
+    <span class="px-4 py-1 text-xs rounded-full bg-cyan-900">Live Updates</span>
   </div>
+</div>
 
-  <a href="https://t.me/+px8do43YQ0BiOTM1" class="cta">
-    JOIN NOW FOR FREE
-  </a>
-
-  <div class="footer">
-    💎 Precision • Power • Passion 🌍
+<!-- STATS -->
+<div class="grid grid-cols-3 gap-4">
+  <div class="glass rounded-xl p-4">
+    <div class="text-primary text-lg font-bold">90K+</div>
+    <div class="text-xs text-gray-300 mt-1">Members</div>
   </div>
-
-  <div class="disclaimer">
-    <strong>Disclaimer:</strong> All trading and game-related activities involve risk.
-    Hurariah Capital provides information for educational and entertainment purposes only.
-    We do not guarantee profits. Please trade responsibly.
+  <div class="glass rounded-xl p-4">
+    <div class="text-secondary text-lg font-bold">High</div>
+    <div class="text-xs text-gray-300 mt-1">Accuracy</div>
   </div>
-
-  <div class="links">
-    <a href="https://t.me/+nytsQrHz0TNmNGI1">Privacy Policy</a> |
-    <a href="https://t.me/+nytsQrHz0TNmNGI1">Contact Us</a>
+  <div class="glass rounded-xl p-4">
+    <div class="text-primary text-lg font-bold">4.9★</div>
+    <div class="text-xs text-gray-300 mt-1">Rating</div>
   </div>
+</div>
 
-  <div class="powered">
-    Powered by <a href="https://telegram.me/+TRlJl628l-FkMWE9" target="_blank">NexGroww Agency</a>
+<!-- CTA -->
+<a href="https://t.me/+px8do43YQ0BiOTM1" target="_blank"
+   class="flex items-center justify-center gap-2 w-full py-4 rounded-xl
+          text-lg font-bold bg-gradient-to-r from-primary to-secondary
+          shadow-xl shadow-cyan-500/40 active:scale-95">
+  <i data-feather="send"></i>
+  JOIN NOW FOR FREE
+</a>
+
+<!-- TRUST -->
+<div class="glass rounded-xl p-4 flex justify-between text-xs">
+  <div class="flex flex-col items-center gap-1">
+    <i data-feather="check-circle" class="text-green-400"></i>Verified
   </div>
+  <div class="flex flex-col items-center gap-1">
+    <i data-feather="lock" class="text-primary"></i>Secure
+  </div>
+  <div class="flex flex-col items-center gap-1">
+    <i data-feather="trending-up" class="text-secondary"></i>Growth
+  </div>
+  <div class="flex flex-col items-center gap-1">
+    <i data-feather="star" class="text-primary"></i>Top Rated
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<p class="text-xs text-gray-400 leading-relaxed">
+  <strong>Disclaimer:</strong> All trading and game-related activities involve risk.
+  Hurariah Capital provides information for educational and entertainment purposes only.
+  We do not guarantee profits. Please trade responsibly.
+</p>
+
+<!-- FOOTER LINKS -->
+<p class="text-[11px] text-gray-500">
+  <a href="https://t.me/+nytsQrHz0TNmNGI1" class="text-primary">Privacy Policy</a> |
+  <a href="https://t.me/+nytsQrHz0TNmNGI1" class="text-primary">Contact Us</a>
+</p>
+
+<p class="text-[11px] text-gray-500">
+  Powered by
+  <a href="https://telegram.me/+TRlJl628l-FkMWE9"
+     target="_blank"
+     class="text-primary font-semibold">NexGroww Agency</a>
+</p>
 
 </div>
 
 <script>
-let count = 5;
-const el = document.getElementById("countdown");
-setInterval(()=>{
-  if(count > 0){
-    count--;
-    el.innerText = count;
+document.addEventListener("DOMContentLoaded",()=>{
+  feather.replace();
+  if(window.innerWidth > 768){
+    anime({
+      targets:'.glass',
+      opacity:[0,1],
+      translateY:[18,0],
+      delay:anime.stagger(120),
+      easing:'easeOutQuad'
+    });
   }
-},1000);
+});
 </script>
 
 </body>
