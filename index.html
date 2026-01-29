@@ -32,73 +32,64 @@ fbq('track', 'PageView');
 
 body{
   min-height:100vh;
+  background:#000;
+  color:#fff;
   display:flex;
   justify-content:center;
-  padding:20px;
-  color:#fff;
-  background:
-    radial-gradient(circle at top, #1e1b4b, #020617 60%);
 }
 
-/* Animated grid glow */
+/* SUBTLE GRID */
 .bg-grid{
   background-image:
-    linear-gradient(rgba(99,102,241,.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34,211,238,.12) 1px, transparent 1px);
-  background-size:32px 32px;
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:34px 34px;
 }
 
-.container{
+/* MAIN WRAP */
+.main{
   width:100%;
-  max-width:430px;
+  max-width:520px;
   text-align:center;
-  background:rgba(15,23,42,.78);
-  border:1px solid rgba(99,102,241,.45);
-  backdrop-filter:blur(18px);
-  border-radius:22px;
-  padding:34px 24px;
-  box-shadow:0 0 60px rgba(99,102,241,.15);
+  padding:40px 20px;
 }
 
 /* TITLE */
 h1{
-  font-size:28px;
+  font-size:30px;
   font-weight:700;
-  background:linear-gradient(90deg,#a78bfa,#22d3ee);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
   letter-spacing:1px;
+  color:#fff;
 }
 
 .tagline{
   font-size:14px;
-  opacity:.9;
+  opacity:.85;
   margin-top:6px;
 }
 
 /* TIMER */
 .timer{
-  margin-top:16px;
+  margin-top:18px;
   font-size:18px;
   font-weight:600;
-  color:#facc15;
-  text-shadow:0 0 10px rgba(250,204,21,.5);
+  color:#22d3ee;
 }
 
-/* PROFILE IMAGE */
+/* IMAGE */
 .profile{
-  margin:24px 0;
+  margin:28px 0;
 }
 
 .profile img{
-  width:175px;
-  height:175px;
+  width:180px;
+  height:180px;
   border-radius:50%;
   object-fit:cover;
-  border:4px solid #818cf8;
+  border:3px solid #22d3ee;
   box-shadow:
-    0 0 25px rgba(129,140,248,.7),
-    0 0 60px rgba(34,211,238,.35);
+    0 0 25px rgba(34,211,238,.6),
+    0 0 60px rgba(34,211,238,.25);
 }
 
 /* STATS */
@@ -115,19 +106,19 @@ h1{
 
 /* CTA */
 .cta{
-  display:block;
-  margin:22px 0 12px;
-  padding:16px;
+  display:inline-block;
+  margin:26px 0 14px;
+  padding:16px 36px;
   font-size:17px;
   font-weight:700;
-  color:#020617;
+  color:#000;
   text-decoration:none;
   border-radius:50px;
-  background:linear-gradient(135deg,#22d3ee,#a78bfa);
+  background:#22d3ee;
   box-shadow:
-    0 15px 35px rgba(34,211,238,.45),
-    0 0 30px rgba(167,139,250,.4);
-  transition:.25s ease;
+    0 0 25px rgba(34,211,238,.7),
+    0 0 60px rgba(34,211,238,.35);
+  transition:.25s;
 }
 
 .cta:hover{
@@ -135,26 +126,24 @@ h1{
 }
 
 .cta:active{
-  transform:scale(.96);
+  transform:scale(.95);
 }
 
 /* FOOTER TEXT */
 .footer{
   font-size:13px;
-  opacity:.85;
-  margin-top:10px;
+  opacity:.8;
+  margin-top:12px;
 }
 
 /* DISCLAIMER */
 .disclaimer{
-  margin-top:20px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.14);
-  padding:12px;
-  border-radius:14px;
+  margin-top:24px;
+  padding:14px;
+  border-top:1px solid rgba(255,255,255,.12);
   font-size:12px;
   line-height:1.5;
-  color:#d1d5db;
+  color:#aaa;
 }
 
 /* LINKS */
@@ -164,17 +153,16 @@ h1{
 }
 
 .links a{
-  color:#a78bfa;
+  color:#22d3ee;
   text-decoration:none;
   margin:0 6px;
-  font-weight:600;
 }
 
 /* POWERED BY */
 .powered{
-  margin-top:12px;
+  margin-top:14px;
   font-size:12px;
-  opacity:.8;
+  opacity:.7;
 }
 
 .powered a{
@@ -187,7 +175,7 @@ h1{
 
 <body class="bg-grid">
 
-<div class="container">
+<div class="main">
 
   <h1>Hurariah Capital</h1>
   <div class="tagline">💰 Analyze • Learn • Improve 🎯</div>
@@ -206,7 +194,7 @@ h1{
   </div>
 
   <a href="https://t.me/+px8do43YQ0BiOTM1" class="cta">
-    🚀 JOIN NOW FOR FREE
+    JOIN NOW FOR FREE
   </a>
 
   <div class="footer">
